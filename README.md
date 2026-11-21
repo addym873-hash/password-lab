@@ -56,8 +56,9 @@ This project is an educational tool, not a professional security assessment or b
 | Offline functionality | Passed |
 | Network privacy | Passed |
 
-Additional testing and browser storage verification are planned.
+Browser storage testing confirmed that local storage, session storage, IndexedDB, and cookies were empty during testing.
 
+These manual tests support the project's privacy-first design but do not constitute a comprehensive security audit.
 ## Future Improvements
 
 - Automated testing
