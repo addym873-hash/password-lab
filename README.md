@@ -55,6 +55,9 @@ This project is an educational tool, not a professional security assessment or b
 | Password generator | Passed |
 | Offline functionality | Passed |
 | Network privacy | Passed |
+| Less predictable password | Good |
+| Repeated catdog pattern after improvement | Very weak |
+| Common password with substitutions | Weak |
 
 Browser storage testing confirmed that local storage, session storage, IndexedDB, and cookies were empty during testing.
 
