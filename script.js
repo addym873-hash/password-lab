@@ -23,6 +23,10 @@ function analyzePassword(password) {
   if (common.has(lower)) {score=0;notes.push('This appears in our small demonstration list of common passwords. Do not use it.');}
   else if (/password|qwerty|letmein|welcome|admin|123456|abc123|iloveyou/i.test(password)) {score -= 45;notes.push('Contains a common password or sequence. Avoid predictable terms.');}
   if (/(.)\1{2,}/u.test(password)) {score-=15;notes.push('Repeated characters make patterns more predictable.');}
+  if (/^(.{2,})\1+$/u.test(password)) {
+    score -= 35;
+    notes.push('Avoid repeating groups of characters.');
+}
   if (/0123|1234|2345|3456|4567|5678|6789|abcd|qwer|asdf|zxcv/i.test(password)) {score-=20;notes.push('Avoid keyboard or counting sequences.');}
   if (/^(?:[a-zA-Z]+)(?:19|20)\d{2}[!?._]*$/.test(password)) {score-=25;notes.push('A word followed by a year and punctuation is a common pattern.');}
   if (new Set(chars).size <= Math.max(2, Math.floor(length / 4))) {score-=25;notes.push('Too many repeated characters reduce unpredictability.');}
